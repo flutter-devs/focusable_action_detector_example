@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:focusable_action_detector_example/button.dart';
+import 'package:focusable_action_detector_example/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,18 +13,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Focusable Action Detector Example'),
+      home: const Splash(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -48,7 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text(widget.title)),
+        automaticallyImplyLeading: false,
+        title: const Center(
+          child: Text('Focusable Action Detector Example'),
+        ),
       ),
       body: Center(
         child: Column(
