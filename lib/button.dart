@@ -42,6 +42,7 @@ class _MyCustomButtonState extends State<MyCustomButton> {
     return GestureDetector(
       onTap: _handlePressed,
       child: FocusableActionDetector(
+        mouseCursor: SystemMouseCursors.click,
         onShowFocusHighlight: _handleFocusHighlight,
         onShowHoverHighlight: _handleHoveHighlight,
         actions: {
